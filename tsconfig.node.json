@@ -1,6 +1,8 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.node.json",
   "include": ["electron.vite.config.*", "src/main/**/*", "src/preload/**/*"],
+  "exclude": ["src/renderer"], // ✅ Thêm dòng này
+
   "compilerOptions": {
     "composite": true,
     "types": ["electron-vite/node"]

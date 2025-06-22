@@ -1,19 +1,21 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
-  "include": [
-    "src/renderer/src/env.d.ts",
-    "src/renderer/src/**/*",
-    "src/renderer/src/**/*.tsx",
-    "src/preload/*.d.ts"
-  ],
+  "include": ["src/renderer/src/**/*", "src/preload/*.d.ts"],
   "compilerOptions": {
-    "composite": true,
     "jsx": "react-jsx",
+    "lib": ["DOM", "ESNext"],
+
+    /* 🔑 buộc nạp typings React */
+    "types": ["react", "react-dom"],
+
+    /* 🔑 đảm bảo tsc tìm trong node_modules/@types */
+    "typeRoots": ["./node_modules/@types"],
+"composite": false  ,
     "baseUrl": ".",
+    
     "paths": {
-      "@renderer/*": [
-        "src/renderer/src/*"
-      ]
+      "@renderer/*": ["src/renderer/src/*"],
+      "@/*": ["src/*"],
     }
   }
 }

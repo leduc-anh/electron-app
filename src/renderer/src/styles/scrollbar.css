@@ -1,0 +1,8 @@
+/* Ẩn scrollbar nhưng vẫn cuộn */
+.scrollbar-hidden {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge cũ */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari / Edge mới */
+}
